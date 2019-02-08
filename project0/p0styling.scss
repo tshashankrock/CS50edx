@@ -1,0 +1,65 @@
+$color: black;
+$cent:center;
+$px:900;
+$nothing:none;
+
+
+%message {
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+
+#name,#educationbody{
+background-image: url("signup");
+@extend %message;
+}
+#projectbody{
+background-image: url("projectimg");
+@extend %message;
+}
+#indexbody{
+background-image: url("backgroundpic");
+@extend %message;
+}
+#welcomebody{
+  background-image: url("img");
+  @extend %message;
+}
+
+a:link,a:visited,a:active,a:hover{
+  display: inline-flex;
+  all:unset;
+  color: $color;
+  background-color: transparent;
+  text-decoration:$nothing;
+  cursor: pointer;
+}
+footer{
+	color:$color;
+	text-align:$cent;
+	font-size: 30px;
+	margin:50px 70px 50px 550;
+}
+header{
+	margin:100px 60px 80px;
+	text-align:$cent;
+	font-weight: 20px;
+	font-size:40px;
+	font-family: verdana,arial;
+	clear:left;
+	color:$color;
+}
+@media screen and (max-width:$px) {
+  footer.foot {
+    display:$nothing;
+  }
+  header.head {
+  	display:$nothing;
+  }
+}
+@media screen and (max-width:$px) {
+  header.eduheader {
+    display: $nothing;
+  }
+}

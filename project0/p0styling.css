@@ -1,0 +1,51 @@
+#name, #educationbody, #projectbody, #indexbody, #welcomebody {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+
+#name, #educationbody {
+  background-image: url("signup"); }
+
+#projectbody {
+  background-image: url("projectimg"); }
+
+#indexbody {
+  background-image: url("backgroundpic"); }
+
+#welcomebody {
+  background-image: url("img"); }
+
+a:link, a:visited, a:active, a:hover {
+  display: inline-flex;
+  all: unset;
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer; }
+
+footer {
+  color: black;
+  text-align: center;
+  font-size: 30px;
+  margin: 50px 70px 50px 550; }
+
+header {
+  margin: 100px 60px 80px;
+  text-align: center;
+  font-weight: 20px;
+  font-size: 40px;
+  font-family: verdana,arial;
+  clear: left;
+  color: black; }
+
+@media screen and (max-width: 900) {
+  footer.foot {
+    display: none; }
+
+  header.head {
+    display: none; } }
+@media screen and (max-width: 900) {
+  header.eduheader {
+    display: none; } }
+
+/*# sourceMappingURL=p0styling.css.map */
