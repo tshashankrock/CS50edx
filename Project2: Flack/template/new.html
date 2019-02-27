@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+     #indexbody{
+    background-image: url("../static/chatimg.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; }
+
+      div.msg_bbl {
+        background-color: #ddd;
+        padding: 5px 10px;
+        border-radius: 10px;
+        color: #555;
+        margin-bottom: 5px;
+      }
+    </style>
+
+  </head>
+  <body id="indexbody">
+
+    <div class="text-center well"><b>Welcome to flack chating App</b></div>
+
+    <div class="container">
+      <div class="col-sm-8">
+        <div class="no_message">
+          <h1 style='color: #ccc'>Start typing...</h1>
+          <div class="message_holder"></div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <form action="" method="POST">
+          <b>Type your message below</b>
+          <div class="clearfix" style="margin-top: 5px;"></div>
+          <input type="text" id="username" class="username form-control" placeholder="User Name">
+          <div style="padding-top: 5px;"></div>
+          <input type="text" id="message" class="message form-control" placeholder="Messages">
+          <div style="padding-top: 5px;"></div>
+          <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-send"></span> Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+
+      var socket = io.connect( 'http://' + document.domain + ':' + location.port )
+      socket.on( 'connect', function() {
+        socket.emit( 'my event',
+         { data: 'User Connected'
+       } )
+     })
+        var form = $( 'form' ).on( 'submit', function( e ) {
+          e.preventDefault()
+
+          //var user_name = document.getElementById("username");
+          localStorage.setItem("user_name", $( 'input.username' ).val());
+
+        //  var message = document.getElementById("message")
+          localStorage.setItem("message",$( 'input.message' ).val());
+
+           user_name = localStorage.getItem("user_name")
+           message = localStorage.getItem("message")
+
+          console.log(user_name,message)
+
+          socket.emit( 'my event', {
+            user : user_name,
+            msg : message
+          } )
+          // empty the input field
+          $( 'input.message' ).val( '' ).focus()
+        } )
+      // capture message
+      socket.on( 'my response', function( msg ) {
+        if( typeof msg.user !== 'undefined' ) {
+            $( 'h1' ).remove()
+            $( 'div.message_holder' ).append( '<div class="msg_bbl"><b style="color: black">'+msg.user+'</b> '+msg.msg+'</div>' )
+          }
+        console.log( msg )
+      } )
+    </script>
+  </body>
+</html>
