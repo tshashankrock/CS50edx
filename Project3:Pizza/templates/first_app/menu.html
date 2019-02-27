@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    #customers {
+    }
+
+    #customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  }
+  #customers tr:hover {background-color: #ddd;}
+  #customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+  }
+
+    </style>
+      <meta charset="utf-8">
+    <title>Pizza Menu</title>
+    <link rel="stylesheet" href="{% static "css/p0style.css" %}"/>
+      <link rel="stylesheet" href="{% static "css/styling.css" %}"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+  <header class="head">
+  <h1 style="text-align:center">Welcome to Pizza Mania</h1>
+  <a href='http://127.0.0.1:8000'><button type="button" class="btn btn-dark" style="float: right;">Log Out</button></a>
+</header>
+  <body id="indexbody">
+  <h2 style="text-align:center">Select the Menu you Wish and click on order now to enjoy the delecious Pizza :) :)</h2>
+  <div class="djangotwo">
+    {% if pizza_selection %}
+      <table id="customers" align="center">
+        <thead>
+          <th>Sno.:</th>
+          <th>Category:</th>
+          <th>PizzaName:&nbsp;</th>
+          <th>Size:</th>
+          <th>Price:</th>
+          <th>Topping:</th>
+          <th>Tick to Checkout:</th>
+
+        </thead>
+
+      {% for acc in pizza_selection %}
+      <tr>
+          <td>&nbsp;&nbsp;{{acc.pid}}&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;{{acc.catid}}&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{acc.pname}}&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;{{acc.psize}}&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;{{acc.pprice}}&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;{{acc.tname}}&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name= '{{ acc.pid }}'/></td>
+        </tr>
+      {% endfor %}
+    </table>
+      {% else %}
+      <p> No Menu to display! Check your connection</p>
+      {% endif %}
+  </div>
+  </body>
+  <footer>
+    <p id="finalval"></p>
+    <a href = "{% url 'first_app:cart' %}" style="float:right"><button type="button" class="btn btn-outline-warning">Procced</button></a>
+  </footer>
+</html>
+<!--<script>
+  if(!localStorage.getItem('name'))
+    localStorage.setItem('name',0);
+
+
+    document.addEventListener('DOMContentLoader',() => {
+      document.querySelector('#name').innerHTML = local.Storage.getItem('#name');
+
+      document.querySelector('input').onclick = () => {
+        localStorage.setItem(acc.pname,{{ acc.pname }});
+        localStorage.setItem({{ acc.size }});
+        localStorage.setItem({{ acc.pprice }});
+        localStorage.setItem({{ acc.tname }});
+      }
+    })
+</script>
+-->

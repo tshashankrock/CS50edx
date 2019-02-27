@@ -1,0 +1,49 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pizza Mania</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/p0style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/styling.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+  <header class="head">
+  <h1 class="container">Just One step Away to have a delicious Pizza</h1>
+</header>
+<body id="indexbody">
+  <br><br>
+  <div id="welcome">
+    <h3>Order selected:</h2>
+      {% if pizza_selection %}
+        <table id="customers" align="center">
+          <t/head>
+            <th>Sno.:</th>
+            <th>Category:</th>
+            <th>PizzaName:&nbsp;</th>
+            <th>Size:</th>
+            <th>Price:</th>
+            <th>Topping:</th>
+          </thead>
+
+
+      {% for acc in pizza_selection %}
+      <tr>
+          <td>&nbsp;&nbsp;{{acc.pid}}&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;{{acc.catid}}&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{acc.pname}}&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;{{acc.psize}}&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;{{acc.pprice}}&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;{{acc.tname}}&nbsp;&nbsp;</td>
+        </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>Nothing in Cart</p>
+    {% endif %}
+</div>
+  </div>
+</body>
+  </html>

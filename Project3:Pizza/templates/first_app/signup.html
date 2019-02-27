@@ -1,0 +1,25 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pizza Mania</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="stylesheet" href="../static/css/p0style.css">
+      <link rel="stylesheet" href="../static/css/style.css">
+    	<link rel="stylesheet" href="../static/css/styling.css">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+<body id="indexbody">
+      {% if registered %}
+        <h1>Thank you for Registering!</h1>
+      {% else %}
+      <b><h1 class="container" style="text-align:center">Please Sign up here!</h1></b>
+      <br><br>
+      <form method="POST">
+        {{ form.as_p }}
+        <input type="submit" class = 'btn btn-primary' value="Submit">
+      </form>
+      {% endif %}
+</body>
+</html>
