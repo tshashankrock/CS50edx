@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Book Review
+{% endblock %}
+
+{% block  body%}
+<body id="frontbody">
+  <br><br>
+  <h1 style="text-align:center">All Books Details are:</h1><br>
+  <h1 style="text-align:center">Click on Isbn to see it Goodread Rating of the book</h1><br>
+  <ul>
+    {% for book in books %}
+      <li>
+        <a href="{{ url_for('apiaccess', isbn = book.isbn) }}">
+            <b>{{ book.isbn }}</b></a> , <b>{{ book.title }}</b>, <b>{{ book.author }}</b>, <b>{{book.year}}</b>
+
+      </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

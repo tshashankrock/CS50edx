@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Rating
+{% endblock %}
+
+{% block  body%}
+<body id="frontbody">
+  <br><br>
+  <h1 style="text-align:center">Success!</h1>
+<br>
+<br>
+<h1 style="text-align:center">See All the Rating :)</h1>
+<h3 style="text-align:center">Click on review to see the review<a href="{{url_for('finalreview')}}" style="float:center">Review</a>
+<ul>
+    {% for bk in revw %}
+          <li>ISBN: {{ bk.isbn }}</li>
+<br>
+          <li>Rating: {{ bk.rating }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

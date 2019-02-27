@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Book Review
+{% endblock %}
+
+{% block  body%}
+
+<body id="frontbody">
+  <div class="signuppage" style="text-align:center">
+	<form action="{{url_for('insertfunc')}}" method="post" autocomplete="off">
+	<h5 class="forbold" style="text-align:center">User Id:</h5>
+	<input type="text" name="id" placeholder="User Id" required/>
+	<br>
+	<h5 class="forbold">Name:</h5>
+	<input type="text" name="uname" placeholder="Name" required/>
+	<br>
+  <h5 class="forbold">Password:</h5>
+	<input type="password" name="pass" placeholder="Password" required/>
+  <br>
+	<h5 class="forbold">Email:</h5>
+	<input type="email" name="email" placeholder="Email" required/>
+	<br><br>
+    <input type=submit value="Submit"> &nbsp;
+    <!--<a href="sigin.html"><button type="button" class="btn btn-light">Sign in</button></a>-->
+  </form>
+	<!--<a href="welcome.html"><button type="button" class="btn btn-dark">Submit</button></a>&nbsp; &nbsp; &nbsp; &nbsp;-->
+
+	<br>
+  </div>
+  </body>
+<footer class="foot">
+	<h3>Get the code on Github:</h3>&nbsp;&nbsp;&nbsp;<a href="https://github.com/tshashankrock/CS50edx/tree/master/project0" target="_blank"><img  id="imgtag" src=".../static/gitimg" alt="github" height="50" width="50"></a>
+</footer>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  See Review
+{% endblock %}
+
+{% block  body%}
+<body id="frontbody">
+  <br><br>
+  <h1 style="text-align:center">Books Details are:</h1><br>
+  <ul>
+      {% for bk in book %}
+            <li>ISBN: {{ bk.isbn }}</li>
+            <li>Author: {{ bk.author }}</li>
+            <li>Title: {{ bk.title }}</li>
+            <li>Year: {{ bk.year }}</li>
+      {% endfor %}
+  </ul>
+&nbsp;  <h3>Click on Review to check the review of book by ISBN:
+   <a href="review.html" target=_blank style="float:center">Review</a></h3>
+</body>
+{% endblock %}

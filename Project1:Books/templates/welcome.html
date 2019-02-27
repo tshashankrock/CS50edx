@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Welcome
+{% endblock %}
+
+{% block  body%}
+
+<body id="frontbody">
+	<header class="head">
+		<a href="{{url_for('sigin')}}"><button type="button" class="btn btn-dark" style="float: right;">Log Out</button></a>
+		<h1>Welcome {{ name }}</h1>
+	</header>
+	<div id="welcome">
+	<h2>Perform any one operation out of three</h2>
+	<ol>
+		<a href=search.html><li>Search</li></a>
+		<a href="{{url_for('display')}}"><li>See Goodreads Review</li></a>
+    <a href=review.html><li>Give Review</li></a>
+	</ol>
+	</div>
+<footer class="foot">
+	<h3>Know me on :</h3>&nbsp;&nbsp;&nbsp;<a href="https://www.facebook.com/profile.php?id=100011328984158&ref=bookmarks" target="_blank"><img src="../static/fb" alt="facebook" height="50" width="50"></a>&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/shashank-tripathi-743126104/" target="_blank"><img src="../static/linkedin" alt="linkedin" height="50" width="50"></a>
+</footer>
+</body>
+
+{% endblock %}

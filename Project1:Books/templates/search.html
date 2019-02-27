@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Search Review
+{% endblock %}
+
+{% block  body%}
+
+<body id="frontbody">
+  <header class="head">
+    <a href="{{url_for('sigin')}}"><button type="button" class="btn btn-light" style="float: right;">Log Out</button></a><a href="{{url_for('welcome')}}"><button type="button" class="btn btn-dark" style="float: right;">Back</button></a>
+	</header>
+  	<b><h1 class="container" style="text-align:center">Welcome to Search Menu Option</h1></b>
+      <form class="container" action="{{url_for('showreview')}}" method="post" autocomplete="on"><br>
+        <div class="form-group">
+  	          <h5 class="forbold">ISBN:</h5>
+              <input type="text" name=byisbn placeholder="ISBN No." required><br><br>
+  	          <h5 class="forbold">Author:</h5>
+  	          <input type="text" name=byauthor placeholder="Author" required><br><br>
+              <h5 class="forbold">Title:</h5>
+  	          <input type="text" name=bytitle placeholder="Title" autofocus><br><br>
+              <input type="submit" value="Search">
+        </div>
+      </form>
+    </body>
+    <footer class="foot">
+    	<h3 class="container">Get the code on Github:</h3>&nbsp;&nbsp;&nbsp;<a href="https://github.com/tshashankrock/CS50edx/tree/master/project0" target="_blank"><img  id="imgtag" src="../static/gitimg" alt="github" height="50" width="50"></a>
+    </footer>
+    {% endblock %}

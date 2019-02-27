@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Book Review
+{% endblock %}
+
+{% block  body%}
+<body id="frontbody">
+  <h3 style="text-align:center">Welcome Enter Isbn no. and rating of the book to see the book Review</h3>
+<!--"{{url_for('reviewfunc')}}-->
+<form class="container" enctype="multipart/form-data" action="{{url_for('reviewfunc')}}" method="post">
+ISBN: <input type="text" name="isbn1" required>
+<br>
+<br>
+<h3>Enter the review on the rating from 0 to 5:</h3>
+<br>
+Rating:<input type="text" name="rating1" required/>
+<br>
+<br>
+<input type="submit" value="Submit">
+</form>
+</body>
+{% endblock %}
