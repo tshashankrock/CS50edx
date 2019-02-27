@@ -1,0 +1,28 @@
+#welcome{
+font-weight: 20px;
+color:black;
+font-size:30px;
+margin:80px;
+text-align:left;
+}
+.row,.col,.col-6,.col-sm{
+	outline:1px solid black;
+	border: .5px solid black;
+}
+#imgtag{
+	margin:10px 350px 80px 300px;
+}
+.eduheader{
+	margin:40px 60px 80px;
+}
+.forbold{
+	font-size:25px;
+	color:black;
+}
+form{
+	margin:100px 90px 80px 550px;
+	text-algin:center;
+	font-weight: 20px;
+	font-size:"10";
+	font-family: verdana,arial;
+}

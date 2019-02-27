@@ -1,0 +1,35 @@
+#frontbody {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url("front.jpeg");
+}
+a:link, a:visited, a:active, a:hover {
+  color: black;
+  background-color: transparent;
+  cursor: pointer; }
+
+footer {
+  color: black;
+  text-align: center;
+  font-size: 30px;
+  margin: 50px 70px 50px 550; }
+
+header {
+  margin: 100px 60px 80px;
+  text-align: center;
+  font-weight: 20px;
+  font-size: 40px;
+  font-family: verdana,arial;
+  clear: left;
+  color: black; }
+
+@media screen and (max-width: 900px) {
+  footer.foot {
+    display: none; }
+
+  header.head {
+    display: none; } }
+@media screen and (max-width: 900px) {
+  header.eduheader {
+    display: none; } }
